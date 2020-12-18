@@ -22,42 +22,16 @@
 
     <!-- Icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha512-G3jAqT2eM4MMkLMyQR5YBhvN5/Da3IG6kqgYqU9zlIH4+2a+GuMdLb5Kpxy6ItMdCfgaKlo2XFhI0dHtMJjoRw==" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body>
-    <div id="app">
-        @include('layouts.nav')
+@extends('adminlte::page')
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+@section('title', 'AdminLTE')
 
-    @stack('scripts')
-
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-
-    @if (session()->has('success')) 
-    <script>
-        const notyf = new Notyf({dismissible: true})
-        notyf.success('{{ session('success') }}')
-    </script> 
-    @endif
-
-    <script>
-        /* Simple function to retrieve data url from file */
-        function fileToDataUrl(event, callback) {
-            if (! event.target.files.length) return
-                    
-            let file = event.target.files[0], 
-                reader = new FileReader()
-            
-            reader.readAsDataURL(file)
-            reader.onload = e => callback(e.target.result)
-        }
-    </script>
-</body>
+@section('content_header')
+    <h1 class="m-0 text-dark">Dashboard</h1>
+@stop
 </html>

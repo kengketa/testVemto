@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-2">
     <div class="container">
-        
+
         <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
             vemto
         </a>
@@ -20,7 +20,7 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Apps <span class="caret"></span>
                         </a>
-                        
+
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             @can('view-any', App\Models\User::class)
                             <a class="dropdown-item" href="{{ route('users.index') }}">Users</a>
